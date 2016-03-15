@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllesTactiles.CSharp.Plugins", "ControllesTactiles.CSharp.Plugins.csproj", "{626BAEF3-25CE-866E-ECCF-CD6A135273F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllesTactiles.CSharp", "ControllesTactiles.CSharp.csproj", "{539AC9AF-1ACB-7AB7-B76C-E3EB8DC05D4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllesTactiles.CSharp.Editor", "ControllesTactiles.CSharp.Editor.csproj", "{F9B143B0-1CF2-2EBF-0D4D-DCB90C56BF43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{626BAEF3-25CE-866E-ECCF-CD6A135273F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626BAEF3-25CE-866E-ECCF-CD6A135273F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626BAEF3-25CE-866E-ECCF-CD6A135273F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626BAEF3-25CE-866E-ECCF-CD6A135273F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539AC9AF-1ACB-7AB7-B76C-E3EB8DC05D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539AC9AF-1ACB-7AB7-B76C-E3EB8DC05D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539AC9AF-1ACB-7AB7-B76C-E3EB8DC05D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539AC9AF-1ACB-7AB7-B76C-E3EB8DC05D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B143B0-1CF2-2EBF-0D4D-DCB90C56BF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B143B0-1CF2-2EBF-0D4D-DCB90C56BF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B143B0-1CF2-2EBF-0D4D-DCB90C56BF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B143B0-1CF2-2EBF-0D4D-DCB90C56BF43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
