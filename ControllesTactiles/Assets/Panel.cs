@@ -19,18 +19,17 @@ public class Panel : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IDra
 
     public void OnPointerDown(PointerEventData data)
     {
+        g.GetComponent<Transform>().position = data.pressPosition;
         g.SetActive(true);
-        g.GetComponent<RectTransform>().position = data.position;
-        
         g.GetComponent<Joystick>().OnPointerDown(data);
     }
 
     public void OnPointerUp(PointerEventData data)
     {
-        
-        
-        g.GetComponent<Joystick>().OnPointerDown(data);
+        g.GetComponent<Joystick>().OnPointerUp(data);
         g.SetActive(false);
+        
+        
     }
     
     public void OnDrag(PointerEventData data) {

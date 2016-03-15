@@ -27,12 +27,20 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		void OnEnable()
 		{
-			CreateVirtualAxes();
-		}
+            Debug.Log(m_StartPos);
+            m_StartPos = transform.position;
+            Debug.Log(m_StartPos);
+            CreateVirtualAxes();
+            
+
+        }
+
+        
 
         void Start()
         {
             m_StartPos = transform.position;
+            Invoke("Desactivar",0.1f);
         }
 
 		void UpdateVirtualAxes(Vector3 value)
@@ -57,18 +65,24 @@ namespace UnityStandardAssets.CrossPlatformInput
 			m_UseX = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyHorizontal);
 			m_UseY = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyVertical);
 
-			// create new axes based on axes to use
-			if (m_UseX)
-			{
-				m_HorizontalVirtualAxis = new CrossPlatformInputManager.VirtualAxis(horizontalAxisName);
-				CrossPlatformInputManager.RegisterVirtualAxis(m_HorizontalVirtualAxis);
-			}
-			if (m_UseY)
-			{
-				m_VerticalVirtualAxis = new CrossPlatformInputManager.VirtualAxis(verticalAxisName);
-				CrossPlatformInputManager.RegisterVirtualAxis(m_VerticalVirtualAxis);
+            // create new axes based on axes to use
+            if (m_UseX)
+            {
+                if (!CrossPlatformInputManager.AxisExists(horizontalAxisName)) {
+                    m_HorizontalVirtualAxis = new CrossPlatformInputManager.VirtualAxis(horizontalAxisName);
+                    CrossPlatformInputManager.RegisterVirtualAxis(m_HorizontalVirtualAxis);
+
+                }
+            }
+            if (m_UseY)
+            {
+                if (!CrossPlatformInputManager.AxisExists(verticalAxisName)) {
+                    m_VerticalVirtualAxis = new CrossPlatformInputManager.VirtualAxis(verticalAxisName);
+                    CrossPlatformInputManager.RegisterVirtualAxis(m_VerticalVirtualAxis);
+                }
 			}
 		}
+
 
 
 		public void OnDrag(PointerEventData data)
@@ -95,24 +109,34 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public void OnPointerUp(PointerEventData data)
 		{
-			transform.position = m_StartPos;
-			UpdateVirtualAxes(m_StartPos);
+            UpdateVirtualAxes(m_StartPos);
+            gameObject.SetActive(false);
+            transform.position = m_StartPos;
+			//UpdateVirtualAxes(m_StartPos);
+            
 		}
 
 
-		public void OnPointerDown(PointerEventData data) { }
+		public void OnPointerDown(PointerEventData data) {
+            transform.position = m_StartPos;
+        }
 
 		void OnDisable()
 		{
-			// remove the joysticks from the cross platform input
-			if (m_UseX)
+            /*
+            // remove the joysticks from the cross platform input
+            if (m_UseX)
 			{
 				m_HorizontalVirtualAxis.Remove();
 			}
 			if (m_UseY)
 			{
-				m_VerticalVirtualAxis.Remove();
-			}
+				m_VerticairtualAxis.Remove();
+			}*/
 		}
+
+        void Desactivar() {
+            gameObject.SetActive(false);
+        }
 	}
 }
